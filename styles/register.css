@@ -36,14 +36,14 @@ body {
     border: 0;
     margin: 0 0 1rem;
     padding: 1rem;
-    box-sizing: border-box;
+    box-sizing:border-box;
     border-radius: 10px;
     font-size: large;
 }
 
 .form-input[type="submit"] {
     text-transform: uppercase;
-    background: #FF4000;
+    background: #F55D3E;
     color: white;
     cursor: pointer;
     font-size: large;

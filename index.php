@@ -15,8 +15,10 @@ if (isset($_POST['Submit'])) {
         $accounts[$currUsername] = $formattedPassword;
     }
     if (isset($accounts[$username]) && $accounts[$username] == $password) {
-        $_SESSION['UserData']['username'] = $accounts[$username]; // password
+        $_SESSION['password'] = $accounts[$username]; // password
         $_SESSION['username'] = $username; // username
+        setcookie("score", 0);
+
         header("location:board.php");
         exit;
     } else {
