@@ -16,7 +16,7 @@
             <input class="form-input" type="text" name="username" placeholder="Username">
             <input class="form-input" type="password" name="password" placeholder="Password">
             <input class="form-input" type="submit" value="Register">
-            <p>Already registered? <a href="index.php">Sign In</a></p>
+            <p>Already registered? <a href="index.php">Log In</a></p>
         </form>
     </div>
 </body>
