@@ -12,9 +12,9 @@
             echo "<div class='row'>";      
             foreach($answer as $ans){
               if($ans[1] == true){
-                echo "<input class='ques-tile' type='button' name='EmptyTile'>";
+                echo "<input class='ques-tile'>";
               }else{
-                echo "<input class='ques-tile' type='submit' name='Question' value = '$".$ans[0]."'>";
+                echo "<input class='ques-tile' type='submit' name='$ans' value = '$".$ans[0]."'>";
               }
             }
             echo "</div>";
@@ -58,3 +58,18 @@
           fclose($fp);
         }
       }
+
+      function getQuestion($question){
+        $file = explode(";", file_get_contents("questions.txt"));
+        $question = "";
+        foreach($file as $f){
+          $currentQ = explode(",", $f);
+          if($currentQ[0] == $question){
+            $question = $currentQ[2];
+            break;
+          }
+        }
+        return $question;
+      }
+
+      ?>
