@@ -1,7 +1,3 @@
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,11 +11,12 @@
 
 <body>
     <div id="logo">
-        <img src="img/jeopardy.png" alt="logo"/>
+        <img src="img/jeopardy.png" alt="logo" />
     </div>
+
     <div id="form">
-    <h2>Log in to play</h2>
-        <form action="" method="post" class="login-form">
+        <h2>Log in to play</h2>
+        <form action="" method="post">
             <input class="form-input" type="text" name="username" placeholder="Username" value="<?php echo @$_COOKIE['username']; ?>">
             <input class="form-input" type="password" name="password" placeholder="Password" value="<?php echo @$_COOKIE['Password']; ?>">
             <input class="form-input" type="submit" name="submit" value="Log in">
