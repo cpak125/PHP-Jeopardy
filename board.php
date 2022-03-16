@@ -26,29 +26,10 @@ session_start();
     </form>
 
     <?php
-    // if (isset($_GET["answer"])) {
-
-    //     $answer = $_GET["answer"];
-    //     $points = $_GET["pointVal"];
-
-    //     if (checkAnswer($answer)) {
-    //         $newScore = $_SESSION["score"] + (int)$points;
-    //         $_SESSION["score"] = $newScore;
-    //         // $newScore = (int)$_COOKIE["score"] + (int)$points;
-    //         // setcookie("score", $newScore);
-    //         echo "<p class = 'answer'> CORRECT ANSWER!</p>";
-    //     } else {
-    //         $newScore = $_SESSION["score"] - (int)$points;
-    //         $_SESSION["score"] = $newScore;
-    //         // $newScore = (int)$_COOKIE["score"] - (int)$points;
-    //         // setcookie("score", $newScore);
-    //         echo "<p class = 'answer'> INCORRECT ANSWER!</p>";
-    //     }
-    // }
 
     if (isBoardCleared($_SESSION["answered"])) {
-        echo "<p style = 'font-size = 20pt;'>GAME OVER</p>";
         updateLeaderBoard($_SESSION["username"], $_SESSION["score"]);
+        header("location:gameover.php");
     }
     ?>
 </body>

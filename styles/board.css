@@ -24,7 +24,7 @@ body {
     color: white;
 }
 
-#navbar a {
+#navbar a, a {
     color: white;
     text-decoration: none;
 }
@@ -86,3 +86,5 @@ body {
     width: 70%;
     font-size: 20pt;
 }
+
+

@@ -27,6 +27,7 @@ function buildBoard($answered, $categories) {
 function checkAnswer($answer) {
     $file = explode(";", file_get_contents("questions.txt"));
     $correct = false;
+
     foreach ($file as $f) {
         $currentQ = explode(",", $f);
         if (trim($currentQ[3]) == trim($answer)) {
@@ -100,7 +101,7 @@ function openQuestion($question) {
 
 function updateLeaderBoard($player, $score) {
     if (isset($player)) {
-        $inString = "\r\n" . $player . "," . $score . ";";
+        $inString = "\r\n" . $score . "," . $player . ";";
         $fp = fopen('leaderboard.txt', 'a');
         fwrite($fp, $inString);
         fclose($fp);
@@ -119,3 +120,16 @@ function viewedQuestions($question, $answered) {
 
     return $answered;
 }
+
+function readLeaderBoard(){
+    $board = explode(";", file_get_contents("leaderboard.txt"));
+
+    echo"<h1>LeaderBoard</h1>";
+    foreach($board as $b){
+        $current = explode(",", $b);
+        echo $current[1]. "&nbsp;".$current[0]."<br>";          
+    }
+  }
+
+?>
+

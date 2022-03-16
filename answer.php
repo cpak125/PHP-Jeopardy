@@ -22,7 +22,7 @@ session_start();
         $answer = $_GET["answer"];
         $points = $_GET["pointVal"];
 
-        if (checkAnswer($answer)) {
+        if (checkAnswer($answer) && !empty($answer)) {
             $newScore = $_SESSION["score"] + (int)$points;
             $_SESSION["score"] = $newScore;
             // $newScore = (int)$_COOKIE["score"] + (int)$points;
@@ -37,7 +37,7 @@ session_start();
         }
     }
     ?>
-    <a href="board.php">CONTINUE</a>
+    <a href="board.php"><button>CONTINUE</button></a>
 </body>
 
 </html>
