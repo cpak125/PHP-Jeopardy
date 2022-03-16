@@ -1,2 +1,3 @@
 admin,admin
 Chris,123456
+CP3,123456

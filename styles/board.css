@@ -75,5 +75,14 @@ body {
     background-color: #08415C;
     border: 2px black solid;
     color: #BEEF9E;
-    font-size: 30pt;
+    font-size: 20pt;
+}
+
+#ques-container {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: white;
+    width: 70%;
+    font-size: 20pt;
 }

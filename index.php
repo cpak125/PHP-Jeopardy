@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+
 if (isset($_POST['Submit'])) {
     $accounts = array('admin' => 'admin');
     $username = isset($_POST['username']) ? $_POST['username'] : '';
@@ -17,7 +18,6 @@ if (isset($_POST['Submit'])) {
     if (isset($accounts[$username]) && $accounts[$username] == $password) {
         $_SESSION['password'] = $accounts[$username]; // password
         $_SESSION['username'] = $username; // username
-        setcookie("score", 0);
 
         header("location:board.php");
         exit;
@@ -26,7 +26,20 @@ if (isset($_POST['Submit'])) {
     }
 }
 
+$_SESSION["answered"] = array(
+    array("Q1" => array(200, false), "Q2" => array(200, false), "Q3" => array(200, false), "Q4" => array(200, false), "Q5" => array(200, false)),
+    array("Q6" => array(400, false), "Q7" => array(400, false), "Q8" => array(400, false), "Q9" => array(400, false), "Q10" => array(400, false)),
+    array("Q11" => array(600, false), "Q12" => array(600, false), "Q13" => array(600, false), "Q14" => array(600, false), "Q15" => array(600, false)),
+    array("Q16" => array(800, false), "Q17" => array(800, false), "Q18" => array(800, false), "Q19" => array(800, false), "Q20" => array(800, false)),
+    array("Q21" => array(1000, false), "Q22" =>  array(1000, false), "Q23" =>  array(1000, false), "Q24" =>  array(1000, false), "Q25" =>  array(1000, false)),
+);
+$_SESSION["categories"] = array("Category 1", "Category 2", "Category 3", "Category 4", "Category 5");
+
+$_SESSION["score"] = 0;
+
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -46,7 +59,7 @@ if (isset($_POST['Submit'])) {
 
     <div id="form">
         <h2>Log in to play</h2>
-        <?php if(isset($msg)) echo $msg; ?> <br>
+        <?php if (isset($msg)) echo $msg; ?> <br>
         <form action="" method="post">
             <input class="form-input" type="text" name="username" placeholder="Username">
             <input class="form-input" type="password" name="password" placeholder="Password">
