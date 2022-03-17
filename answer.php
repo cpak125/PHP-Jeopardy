@@ -9,7 +9,9 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PHP Jeopardy</title>
-    <link href="styles/board.css" rel="stylesheet">
+    <style>
+        <?php include "styles/board.css" ?>
+    </style>
 </head>
 
 <body>
@@ -28,13 +30,13 @@ session_start();
             $_SESSION["score"] = $newScore;
             // $newScore = (int)$_COOKIE["score"] + (int)$points;
             // setcookie("score", $newScore);
-            echo "<p class='answer'> CORRECT ANSWER!</p>";
+            echo "<h2 class='answer'> CORRECT ANSWER!</h2>";
         } else {
             $newScore = $_SESSION["score"] - (int)$points;
             $_SESSION["score"] = $newScore;
             // $newScore = (int)$_COOKIE["score"] - (int)$points;
             // setcookie("score", $newScore);
-            echo "<p class ='answer'> INCORRECT ANSWER!</p>";
+            echo "<h2 class ='answer'> INCORRECT ANSWER!</h2>";
         }
     }
     ?>

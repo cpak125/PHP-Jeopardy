@@ -11,11 +11,10 @@ function buildBoard($quesInfo, $categories) {
     foreach ($quesInfo as $row) {
         echo "<div class='row'>";
         foreach ($row as $quesNum => $info) {
-            if ($info[1] == false) {
-                // echo "<input class='ques-tile' type='hidden' name='Question' value=$ques>";
-                echo "<input class='ques-tile' type='submit' name='Question' value='$quesNum - $info[0]'>";
+            if ($info[1] == true) {
+                echo "<input type='button' class='ques-tile'>";
             } else {
-                echo "<input class='ques-tile'>";
+                echo "<input class='ques-tile' type='submit' name='Question' value='$info[0]-$quesNum'>";
             }
         }
         echo "</div>";
@@ -38,12 +37,14 @@ function checkAnswer($answer) {
 }
 
 function isBoardCleared($quesInfo) {
-    $isClear = true;
-    foreach ($quesInfo as $ans) {
-        foreach ($ans as $a => $val) {
-            if ($val[1] == false) {
+    $isClear = false;
+    foreach ($quesInfo as $row) {
+        foreach ($row as $ques => $info) {
+            if ($info[1] == false) {
                 $isClear = false;
                 break;
+            } else {
+                $isClear = true;
             }
         }
     }
@@ -120,15 +121,13 @@ function viewedQuestions($question, $quesInfo) {
     return $quesInfo;
 }
 
-function readLeaderBoard(){
+function readLeaderBoard() {
     $board = explode(";", file_get_contents("leaderboard.txt"));
-    
-    echo"<h1>LeaderBoard</h1>";
-    foreach($board as $b){
+    arsort($board);
+    print_r($board);
+    echo "<h1>LeaderBoard</h1>";
+    foreach ($board as $b) {
         $current = explode(",", $b);
-        echo $current[1]. "&nbsp;".$current[0]."<br>";          
+        echo $current[1] . "&nbsp;" . $current[0] . "<br>";
     }
-  }
-
-?>
-
+}

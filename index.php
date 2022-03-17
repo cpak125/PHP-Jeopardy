@@ -46,7 +46,9 @@ $_SESSION["score"] = 0;
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> PHP Jeopardy</title>
-    <link href="styles/login.css" rel="stylesheet">
+    <style>
+        <?php include "styles/login.css" ?>
+    </style>
 </head>
 
 <body>

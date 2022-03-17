@@ -78,14 +78,15 @@ body {
     font-size: 20pt;
 }
 
-#ques-container {
+.ques-container {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
     color: white;
     width: 70%;
     font-size: 20pt;
-    margin-top: 20px;
+    margin-top: 5%;
+    height: auto;
 }
 
 .ans-container {
@@ -96,7 +97,11 @@ body {
     text-align: center;
 }
 
-.leaderboard{
+.ans-form {
+    margin-top: 5%;
+}
+
+.leaderboard {
     margin-top: 5%;
     margin-left: auto;
     margin-right: auto;
@@ -104,4 +109,45 @@ body {
     text-align: center;
 }
 
+input[type=text] {
+    background: #f2f2f2;
+    width: 30%;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    border-radius: 10px;
+    font-size: medium;
+}
 
+.ans-form input[type=submit] {
+    background: #BEEF9E;
+    color: #08415C;
+    cursor: pointer;
+    font-size: large;
+    box-sizing: border-box;
+    border-radius: 5px;
+    height: 2rem;
+}
+
+.green-button {
+    background: #BEEF9E;
+    color: #08415C;
+    padding: 0.5rem;
+    font-size: large;
+    border-radius: 5px;
+}
+
+.orange-button {
+    background: #F55D3E;
+    color: white;
+    padding: 0.5rem;
+    font-size: large;
+    border-radius: 5px;
+}
+
+#gameover {
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    text-align: center;
+}
