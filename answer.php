@@ -13,8 +13,9 @@ session_start();
 </head>
 
 <body>
+    <?php include 'navbar.php'; ?>
+    <div class="ans-container">
     <?php 
-    include 'navbar.php';
     include 'helper.php';
 
     if (isset($_GET["answer"])) {
@@ -27,17 +28,18 @@ session_start();
             $_SESSION["score"] = $newScore;
             // $newScore = (int)$_COOKIE["score"] + (int)$points;
             // setcookie("score", $newScore);
-            echo "<p class = 'answer'> CORRECT ANSWER!</p>";
+            echo "<p class='answer'> CORRECT ANSWER!</p>";
         } else {
             $newScore = $_SESSION["score"] - (int)$points;
             $_SESSION["score"] = $newScore;
             // $newScore = (int)$_COOKIE["score"] - (int)$points;
             // setcookie("score", $newScore);
-            echo "<p class = 'answer'> INCORRECT ANSWER!</p>";
+            echo "<p class ='answer'> INCORRECT ANSWER!</p>";
         }
     }
     ?>
     <a href="board.php"><button>CONTINUE</button></a>
+    </div>
 </body>
 
 </html>

@@ -21,13 +21,13 @@ session_start();
 
     <form id="board-form" action="board_submit.php" method="get">
         <?php
-        buildBoard($_SESSION["answered"], $_SESSION["categories"]);
+        buildBoard($_SESSION["quesInfo"], $_SESSION["categories"]);
         ?>
     </form>
 
     <?php
 
-    if (isBoardCleared($_SESSION["answered"])) {
+    if (isBoardCleared($_SESSION["quesInfo"])) {
         updateLeaderBoard($_SESSION["username"], $_SESSION["score"]);
         header("location:gameover.php");
     }

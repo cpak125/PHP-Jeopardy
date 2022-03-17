@@ -85,6 +85,23 @@ body {
     color: white;
     width: 70%;
     font-size: 20pt;
+    margin-top: 20px;
+}
+
+.ans-container {
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    text-align: center;
+}
+
+.leaderboard{
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    text-align: center;
 }
 
 

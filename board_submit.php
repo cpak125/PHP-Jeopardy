@@ -18,24 +18,25 @@ session_start();
         <?php
         include 'helper.php';
         if (isset($_GET['Question'])) {
-            $question = $_GET['Question'];
-            $points = getPointVal($question);
-            echo "<br>";
-            echo $points . " points" . "<br><br>";
-
-            $showQues = getQuestion($question);
+            $explode =  explode('-', $_GET['Question']);
+            $quesNum = $explode[0];
+            // $quesNum = $_GET['Question'];
+            $points = getPointVal($quesNum);
+            $quesText = openQuestion($quesNum);
+    
             echo "<div id='question'>";
-            openQuestion($question);
+            echo $points . " points" . "<br><br>";
+            echo $quesText;
             echo "</div";
 
-            $_SESSION["answered"] = viewedQuestions($question, $_SESSION["answered"]);
+            $_SESSION["quesInfo"] = viewedQuestions($quesNum, $_SESSION["quesInfo"]);
         }
         ?>
         <div>
             <form action="answer.php">
-                <input type="text" name="answer">
+                <input type="text" placeholder="Type your answer" name="answer">
                 <input type="hidden" name="pointVal" value="<?= $points; ?>" />
-                <input type="submit" value="Submit">
+                <input type="submit"  value="Submit">
             </form>
         </div>
     </div>

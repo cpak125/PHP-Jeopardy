@@ -14,8 +14,9 @@ session_start();
 
 <body>
     <?php include 'navbar.php' ?>
-    <a href="board.php">Return to Game</a>
+    
     <div class="leaderboard">
+    <a href="board.php"><button>Return to Game</button></a>
         <?php
         include "helper.php";
         readLeaderBoard();

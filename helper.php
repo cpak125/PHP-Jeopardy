@@ -1,5 +1,5 @@
 <?php
-function buildBoard($answered, $categories) {
+function buildBoard($quesInfo, $categories) {
 
     echo "<div class='category'>";
     foreach ($categories as $c) {
@@ -8,13 +8,12 @@ function buildBoard($answered, $categories) {
     echo "</div>";
     echo "<div class='board'>";
 
-    foreach ($answered as $answer) {
+    foreach ($quesInfo as $row) {
         echo "<div class='row'>";
-        foreach ($answer as $ans => $val) {
-            if ($val[1] == false) {
-                echo "<input class='ques-tile' type='submit' name='Question' value =$ans>";
-                // echo "<input class='ques-tile' type='hidden' name='pointVal' value =$val[0]>";
-               
+        foreach ($row as $quesNum => $info) {
+            if ($info[1] == false) {
+                // echo "<input class='ques-tile' type='hidden' name='Question' value=$ques>";
+                echo "<input class='ques-tile' type='submit' name='Question' value='$quesNum - $info[0]'>";
             } else {
                 echo "<input class='ques-tile'>";
             }
@@ -38,9 +37,9 @@ function checkAnswer($answer) {
     return $correct;
 }
 
-function isBoardCleared($answered) {
+function isBoardCleared($quesInfo) {
     $isClear = true;
-    foreach ($answered as $ans) {
+    foreach ($quesInfo as $ans) {
         foreach ($ans as $a => $val) {
             if ($val[1] == false) {
                 $isClear = false;
@@ -82,7 +81,7 @@ function getPointVal($question) {
     $pointVal = 0;
     foreach ($file as $f) {
         $currentQ = explode(",", $f);
-        if (trim($currentQ[0]) == ($question)) {
+        if (trim($currentQ[0]) == trim($question)) {
             $pointVal = $currentQ[1];
             break;
         }
@@ -96,7 +95,7 @@ function openQuestion($question) {
     $points = getPointVal($question);
     $quesData = $fetchedQuestion . "," . $answer . "," . $points;
     $array = explode(",", $quesData);
-    echo $array[0];
+    return $array[0];
 }
 
 function updateLeaderBoard($player, $score) {
@@ -108,22 +107,22 @@ function updateLeaderBoard($player, $score) {
     }
 }
 
-function viewedQuestions($question, $answered) {
+function viewedQuestions($question, $quesInfo) {
     $index = 0;
-    $size = sizeof($answered);
+    $size = sizeof($quesInfo);
     for ($i = 0; $i < $size; $i++) {
-        if (array_key_exists($question, $answered[$i])) {
+        if (array_key_exists($question, $quesInfo[$i])) {
             $index = $i;
         }
     }
-    $answered[$index][$question][1] = true;
+    $quesInfo[$index][$question][1] = true;
 
-    return $answered;
+    return $quesInfo;
 }
 
 function readLeaderBoard(){
     $board = explode(";", file_get_contents("leaderboard.txt"));
-
+    
     echo"<h1>LeaderBoard</h1>";
     foreach($board as $b){
         $current = explode(",", $b);

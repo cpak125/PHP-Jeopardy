@@ -1,6 +1,6 @@
 <?php
 session_start();
-$_SESSION["answered"] = array(
+$_SESSION["quesInfo"] = array(
     array("Q1" => array(200, false), "Q2" => array(200, false), "Q3" => array(200, false), "Q4" => array(200, false), "Q5" => array(200, false)),
     array("Q6" => array(400, false), "Q7" => array(400, false), "Q8" => array(400, false), "Q9" => array(400, false), "Q10" => array(400, false)),
     array("Q11" => array(600, false), "Q12" => array(600, false), "Q13" => array(600, false), "Q14" => array(600, false), "Q15" => array(600, false)),
