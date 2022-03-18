@@ -33,7 +33,7 @@ $_SESSION["quesInfo"] = array(
     array("Q16" => array(800, false), "Q17" => array(800, false), "Q18" => array(800, false), "Q19" => array(800, false), "Q20" => array(800, false)),
     array("Q21" => array(1000, false), "Q22" =>  array(1000, false), "Q23" =>  array(1000, false), "Q24" =>  array(1000, false), "Q25" =>  array(1000, false))
 );
-$_SESSION["categories"] = array("Category 1", "Category 2", "Category 3", "Category 4", "Category 5");
+$_SESSION["categories"] = array("Science", "Geography", "Pop culture", "General", "Sport");
 $_SESSION["score"] = 0;
 
 ?>
