@@ -47,11 +47,10 @@ body {
 
 .categ-tile {
     width: 18vw;
-    font-size: large;
+    font-size: 22pt;
     color: white;
     border: 2px black solid;
     text-align: center;
-    vertical-align: middle;
     line-height: 14vh;
 }
 
@@ -150,4 +149,8 @@ input[type=text] {
     margin-right: auto;
     width: 70%;
     text-align: center;
+}
+
+.leaders {
+    font-size: 16pt;
 }

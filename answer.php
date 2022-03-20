@@ -28,19 +28,15 @@ session_start();
         if (checkAnswer($answer) && !empty($answer)) {
             $newScore = $_SESSION["score"] + (int)$points;
             $_SESSION["score"] = $newScore;
-            // $newScore = (int)$_COOKIE["score"] + (int)$points;
-            // setcookie("score", $newScore);
             echo "<h2 class='answer'> CORRECT ANSWER!</h2>";
         } else {
             $newScore = $_SESSION["score"] - (int)$points;
             $_SESSION["score"] = $newScore;
-            // $newScore = (int)$_COOKIE["score"] - (int)$points;
-            // setcookie("score", $newScore);
             echo "<h2 class ='answer'> INCORRECT ANSWER!</h2>";
         }
     }
     ?>
-    <a href="board.php"><button>CONTINUE</button></a>
+    <a href="board.php"><button class="green-button">CONTINUE</button></a>
     </div>
 </body>
 

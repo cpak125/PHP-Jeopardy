@@ -14,7 +14,7 @@ function buildBoard($quesInfo, $categories) {
             if ($info[1] == true) {
                 echo "<input type='button' class='ques-tile'>";
             } else {
-                echo "<input class='ques-tile' type='submit' name='Question' value='$info[0]-$quesNum'>";
+                echo "<input class='ques-tile' type='submit' name='Question' value='$info[0]-$quesNum'v>";
             }
         }
         echo "</div>";
@@ -28,7 +28,7 @@ function checkAnswer($answer) {
 
     foreach ($file as $f) {
         $currentQ = explode(",", $f);
-        if (trim($currentQ[3]) == trim($answer)) {
+        if (strtolower(trim($currentQ[3]))  == strtolower(trim($answer))) {
             $correct = true;
             break;
         }
@@ -124,10 +124,11 @@ function viewedQuestions($question, $quesInfo) {
 function readLeaderBoard() {
     $board = explode(";", file_get_contents("leaderboard.txt"));
     arsort($board);
-    print_r($board);
     echo "<h1>LeaderBoard</h1>";
+    echo "<div class ='leaders'>";
     foreach ($board as $b) {
         $current = explode(",", $b);
-        echo $current[1] . "&nbsp;" . $current[0] . "<br>";
+        echo $current[1] . "&nbsp;" . "&nbsp;" . "&nbsp;" . $current[0] . "<br>";
     }
+    echo "</div>";
 }
