@@ -154,3 +154,8 @@ input[type=text] {
 .leaders {
     font-size: 16pt;
 }
+
+#summary {
+    max-width: 100%;
+    height: auto;
+}
