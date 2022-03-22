@@ -156,6 +156,9 @@ input[type=text] {
 }
 
 #summary {
-    max-width: 100%;
+    width:90%;
     height: auto;
+    margin-left: 5%;
+    margin-right: 5%;
+    
 }

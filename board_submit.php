@@ -23,9 +23,8 @@ session_start();
         if (isset($_GET['Question'])) {
             $explode =  explode('-', $_GET['Question']);
             $quesNum = $explode[1];
-            // $quesNum = $_GET['Question'];
             $points = getPointVal($quesNum);
-            $quesText = openQuestion($quesNum);
+            $quesText = getQuestion($quesNum);
 
             echo "<div class='question'>";
             echo $points . " points" . "<br><br>";

@@ -14,7 +14,8 @@ function buildBoard($quesInfo, $categories) {
             if ($info[1] == true) {
                 echo "<input type='button' class='ques-tile'>";
             } else {
-                echo "<input class='ques-tile' type='submit' name='Question' value='$info[0]-$quesNum'v>";
+                echo "<input class='ques-tile' type='submit' 
+                name='Question' value='$info[0]-$quesNum'v>";
             }
         }
         echo "</div>";
@@ -88,15 +89,6 @@ function getPointVal($question) {
         }
     }
     return $pointVal;
-}
-
-function openQuestion($question) {
-    $fetchedQuestion = getQuestion($question);
-    $answer = getAnswer($question);
-    $points = getPointVal($question);
-    $quesData = $fetchedQuestion . "," . $answer . "," . $points;
-    $array = explode(",", $quesData);
-    return $array[0];
 }
 
 function updateLeaderBoard($player, $score) {
