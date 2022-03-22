@@ -115,7 +115,6 @@ function viewedQuestions($question, $quesInfo) {
 
 function readLeaderBoard() {
     $board = explode(";", file_get_contents("leaderboard.txt"));
-    arsort($board);
     echo "<h1>LeaderBoard</h1>";
     echo "<div class ='leaders'>";
     foreach ($board as $b) {
